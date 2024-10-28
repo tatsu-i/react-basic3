@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header>
       <div className="header-container">
-        <h1>Todoアプリ</h1>
+        <h1>書籍レビューアプリ</h1>
         {auth ? (
           <button onClick={handleSignOut} className="signout-button">
             サインアウト
