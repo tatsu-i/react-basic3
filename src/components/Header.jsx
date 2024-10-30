@@ -16,11 +16,14 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <div className="header-container">
-        <h1>書籍レビューアプリ</h1>
+    <header className="bg-slate-200">
+      <div className="h-14 flex justify-between container mx-auto items-center px-4">
+        <h1 className="text-2xl">書籍レビューアプリ</h1>
         {auth ? (
-          <button onClick={handleSignOut} className="signout-button">
+          <button
+            onClick={handleSignOut}
+            className="inline-flex h-8 items-center justify-center rounded-md bg-zinc-500 px-5 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+          >
             サインアウト
           </button>
         ) : (

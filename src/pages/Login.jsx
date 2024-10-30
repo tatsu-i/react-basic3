@@ -45,8 +45,8 @@ export const Login = () => {
     <>
       <Header />
       <main>
-        <h2>サインイン</h2>
-        <p>{}</p>
+        <h2 className="text-2xl mb-5">サインイン</h2>
+        <p>{errorMessage}</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>メールアドレス</label>
           <br />
@@ -55,8 +55,11 @@ export const Login = () => {
               required: "Email is required",
             })}
             placeholder="Email"
+            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5"
           />
-          {errors.email && <p>{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-600">{errors.email.message}</p>
+          )}
           <br />
           <label>パスワード</label>
           <br />
@@ -66,12 +69,25 @@ export const Login = () => {
             })}
             type="password"
             placeholder="Password"
+            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5"
           />
-          {errors.password && <p>{errors.password.message}</p>}
+          {errors.password && (
+            <p className="text-red-600">{errors.password.message}</p>
+          )}
           <br />
-          <button type="submit">サインイン</button>
+          <button
+            type="submit"
+            className="mb-5 border rounded px-4 py-2 text-black transition-all duration-300 hover:bg-slate-100 hover:ring-2 hover:ring-neutral-800"
+          >
+            サインイン
+          </button>
         </form>
-        <Link to="/signup">新規作成</Link>
+        <Link
+          to="/signup"
+          className="border rounded px-4 py-2 text-black transition-all duration-300 hover:bg-slate-100 hover:ring-2 hover:ring-neutral-800"
+        >
+          新規作成
+        </Link>
       </main>
     </>
   );

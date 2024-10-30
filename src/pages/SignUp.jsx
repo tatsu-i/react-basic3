@@ -69,7 +69,7 @@ export const SignUp = () => {
     <>
       <Header />
       <main>
-        <h2>新規作成</h2>
+        <h2 className="text-2xl mb-5">新規作成</h2>
         <p>{errorMessage}</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>名前</label>
@@ -83,6 +83,7 @@ export const SignUp = () => {
               },
             })}
             placeholder="Name"
+            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5"
           />
           {errors.name && <p>{errors.name.message}</p>}
           <br />
@@ -97,6 +98,7 @@ export const SignUp = () => {
               },
             })}
             placeholder="Email"
+            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5"
           />
           {errors.email && <p>{errors.email.message}</p>}
           <br />
@@ -112,6 +114,7 @@ export const SignUp = () => {
             })}
             type="password"
             placeholder="Password"
+            className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5"
           />
           {errors.password && <p>{errors.password.message}</p>}
           <br />
@@ -125,7 +128,12 @@ export const SignUp = () => {
           />
           {errors.icon && <p>{errors.icon.message}</p>}
           <br />
-          <button type="submit">新規登録</button>
+          <button
+            type="submit"
+            className="mt-5 border rounded px-4 py-2 text-black transition-all duration-300 hover:bg-slate-100 hover:ring-2 hover:ring-neutral-800"
+          >
+            新規登録
+          </button>
         </form>
       </main>
     </>
