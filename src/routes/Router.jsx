@@ -5,6 +5,7 @@ import { SignUp } from "../pages/SignUp.jsx";
 import { Home } from "../pages/Home.jsx";
 import { NotFound } from "../pages/NotFound.jsx";
 import { useSelector } from "react-redux";
+import { Profile } from "../pages/Profile.jsx";
 
 const Router = () => {
   const auth = useSelector((state) => state.auth.isSignIn);
@@ -17,6 +18,9 @@ const Router = () => {
         {auth ? (
           <>
             <Route path="/" element={<Home />} />
+            <Route>
+              <Route path="/profile" element={<Profile />} />
+            </Route>
           </>
         ) : (
           <Route path="*" element={<Navigate replace to="/login" />} />
